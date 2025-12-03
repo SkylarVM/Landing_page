@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Arctiqa – Gamified Study App</title>
+<title>Arctiqa – Level Up Your Study Journey with Your Penguin Companion</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body {
         margin: 0;
         font-family: sans-serif;
+        background: #f7faff;
         color: #1a1a1a;
-        background: #f8f9fb;
     }
     header {
-        background: white;
+        background: #ffffff;
         padding: 15px 25px;
         display: flex;
         justify-content: space-between;
@@ -20,7 +20,7 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e2e2e2;
     }
     nav a {
         margin-left: 20px;
@@ -36,8 +36,18 @@
     }
     .hero {
         text-align: center;
-        padding: 120px 20px;
-        background: linear-gradient(135deg, #b3d9ff, #e0f7fa);
+        padding: 140px 20px;
+        background: linear-gradient(135deg, #c8e7ff, #e7faff);
+    }
+    .hero img {
+        width: 180px;
+        margin-bottom: 20px;
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0); }
     }
     .hero h1 {
         font-size: 42px;
@@ -53,9 +63,9 @@
         background: #0077ff;
         color: white;
         border-radius: 8px;
-        text-decoration: none;
         font-size: 16px;
         font-weight: 600;
+        text-decoration: none;
     }
     section {
         padding: 80px 20px;
@@ -72,20 +82,17 @@
     }
     .grid {
         display: grid;
-        grid-template-columns: 1fr;
         gap: 30px;
+        grid-template-columns: 1fr;
     }
     @media (min-width: 700px) {
-        .grid-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .grid-2 {
-            grid-template-columns: repeat(2, 1fr);
-        }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
     }
     .card {
         background: white;
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 25px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
@@ -94,7 +101,6 @@
         color: white;
         padding: 40px 20px;
         text-align: center;
-        margin-top: 40px;
     }
     footer input, footer textarea {
         width: 100%;
@@ -121,6 +127,7 @@
     <nav>
         <a href="#problem">Problem</a>
         <a href="#solution">Solution</a>
+        <a href="#penguin">Companion</a>
         <a href="#benefits">Benefits</a>
         <a href="#how-it-works">How it Works</a>
         <a href="#contact">Contact</a>
@@ -134,63 +141,98 @@
 </header>
 
 <section class="hero">
-    <h1>Arctiqa — Study Smart. Level Up.</h1>
-    <p>The gamified productivity app inspired by Finch, Duolingo, Fabulous, and Kahoot — built to help students build habits, stay consistent, and enjoy studying.</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616430.png" alt="Penguin Avatar">
+    <h1>Your Study Buddy Awaits</h1>
+    <p>Meet your baby penguin — born when you start your journey. It grows, studies, celebrates, and evolves with you.</p>
     <a href="#contact" class="btn">Join the Beta</a>
 </section>
 
 <section id="problem">
     <h2>The Problem</h2>
-    <p>Students struggle with staying motivated, building consistent study habits, and managing distractions. Traditional productivity tools feel rigid or boring, making it hard to keep students engaged. High school and university students often need structure, encouragement, and a sense of progress to stay on track.</p>
+    <p>Students often lose motivation, feel alone while studying, and struggle to maintain habits. Many productivity apps feel cold, overwhelming, or impersonal — making it hard to stay consistent and emotionally supported during stressful school or university periods.</p>
 </section>
 
 <section id="solution">
     <h2>The Arctiqa Solution</h2>
-    <p>Arctiqa transforms studying into a gamified experience. By blending elements from popular apps such as Finch, Duolingo, Fabulous, and Kahoot, Arctiqa turns productivity into a personalized adventure. Users level up, track progress, unlock rewards, and follow science-based routines — all while enjoying a friendly, supportive environment designed for real student life.</p>
+    <p>Arctiqa transforms studying into an emotional and gamified experience. Instead of facing your tasks alone, you gain a companion: a baby penguin who grows as you grow. Each study session becomes a shared moment of progress, encouragement, and bonding. Inspired by Finch, Duolingo, Fabulous, and Kahoot, Arctiqa combines science-backed productivity tools with warmth, playfulness, and emotional support.</p>
 </section>
 
-<section id="target">
-    <h2>Who It’s For</h2>
+<section id="penguin">
+    <h2>Meet Your Penguin Companion</h2>
     <div class="grid grid-3">
-        <div class="card"><h3>High School Students</h3><p>For students who want better focus, fun study habits, and a boost in consistency.</p></div>
-        <div class="card"><h3>University Students</h3><p>For those balancing classes, projects, and exams — and needing a tool that keeps them engaged.</p></div>
-        <div class="card"><h3>Young Learners</h3><p>Gamified tasks and rewards help younger students build strong long-term habits.</p></div>
+        <div class="card">
+            <h3>Watch It Hatch</h3>
+            <p>Your journey begins with an egg. As soon as you start your first study session, your penguin is born — marking the start of your adventure together.</p>
+        </div>
+        <div class="card">
+            <h3>Grow Together</h3>
+            <p>Every completed task, session, and habit helps your penguin evolve. It learns, levels up, unlocks new animations, and becomes stronger along with you.</p>
+        </div>
+        <div class="card">
+            <h3>Study "Calls"</h3>
+            <p>Your penguin joins you during sessions through adorable animations — reading, writing, cheering, and keeping you motivated so you never feel alone.</p>
+        </div>
     </div>
 </section>
 
 <section id="benefits">
     <h2>Benefits & Key Features</h2>
     <div class="grid grid-2">
-        <div class="card"><h3>Gamified Study Sessions</h3><p>Turn tasks into quests with streaks, XP, and level progression.</p></div>
-        <div class="card"><h3>Mood & Habit Tracking</h3><p>Track emotions, productivity cycles, and daily routines.</p></div>
-        <div class="card"><h3>Personalized Recommendations</h3><p>Receive suggestions tailored to your study patterns.</p></div>
-        <div class="card"><h3>Challenges & Rewards</h3><p>Compete with friends, collect badges, and unlock achievements.</p></div>
+        <div class="card">
+            <h3>Emotional Support, Not Just Productivity</h3>
+            <p>Your penguin reacts to your progress, moods, and achievements.</p>
+        </div>
+        <div class="card">
+            <h3>Gamified Progress System</h3>
+            <p>Gain XP, unlock evolutions, and earn badges as you complete tasks.</p>
+        </div>
+        <div class="card">
+            <h3>Personalized Study Paths</h3>
+            <p>Get tailored routines based on your academic needs and energy levels.</p>
+        </div>
+        <div class="card">
+            <h3>Interactive Challenges</h3>
+            <p>Participate in quests and group challenges inspired by Kahoot-style engagement.</p>
+        </div>
     </div>
 </section>
 
 <section id="how-it-works">
     <h2>How It Works</h2>
-    <div class="grid grid-4 grid">
-        <div class="card"><h3>1. Sign Up</h3><p>Create your profile and choose your study goals.</p></div>
-        <div class="card"><h3>2. Start Your Quests</h3><p>Follow daily tasks, challenges, and personalized study paths.</p></div>
-        <div class="card"><h3>3. Earn Rewards</h3><p>Collect XP, level up, and unlock exclusive items.</p></div>
-        <div class="card"><h3>4. Track Your Growth</h3><p>See your progress with habit statistics and mood insights.</p></div>
+    <div class="grid grid-4">
+        <div class="card">
+            <h3>1. Create Your Egg</h3>
+            <p>Sign up and receive your penguin egg — the beginning of your journey.</p>
+        </div>
+        <div class="card">
+            <h3>2. Start Studying</h3>
+            <p>Your penguin hatches and joins you in your first study “call”.</p>
+        </div>
+        <div class="card">
+            <h3>3. Earn XP Together</h3>
+            <p>Complete tasks, build habits, and evolve your penguin with each milestone.</p>
+        </div>
+        <div class="card">
+            <h3>4. Stay Consistent</h3>
+            <p>Your companion motivates you, celebrates wins, and keeps you accountable.</p>
+        </div>
     </div>
 </section>
 
 <section id="metrics">
     <h2>Expected Outcomes</h2>
-    <p>Arctiqa is designed to increase motivation, build consistent study routines, and help students stay accountable in a fun and interactive way. While exact data will be collected during beta testing, our goal is to help students feel more organized, confident, and motivated every day.</p>
+    <p>Arctiqa aims to increase motivation, strengthen study habits, reduce loneliness, and make studying feel meaningful and emotionally engaging. Beta testing will help refine the impact and experience.</p>
 </section>
 
 <section id="final-cta" style="text-align:center;">
-    <h2>Ready to Level Up Your Study Routine?</h2>
+    <h2>Ready to Meet Your Penguin?</h2>
+    <p>Your study partner is waiting to hatch.</p>
     <a href="#contact" class="btn">Join the Beta Today</a>
 </section>
 
 <footer id="contact">
     <h2>Contact Us</h2>
-    <p>Have questions or want early access? Send us a message.</p>
+    <p>Reach out for early access or collaboration.</p>
     <form>
         <input type="text" placeholder="Your Name">
         <input type="email" placeholder="Email">
