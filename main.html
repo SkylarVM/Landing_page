@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Arctiqa – Study with Your Baby Penguin Buddy</title>
+  <title>Arctiqa – Study Adventures with Your Baby Penguin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
@@ -15,7 +15,6 @@
       --text-main: #f7f9ff;
       --text-soft: #c3c7e0;
       --border-subtle: rgba(255, 255, 255, 0.06);
-      --danger: #ff6b81;
       --radius-lg: 18px;
       --radius-xl: 28px;
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.35);
@@ -244,6 +243,1266 @@
     /* Hero */
 
     main {
+      flex: 1;
+    }
+
+    .hero {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(11, 17, 48, 0.95);
+      border: 1px solid rgba(116, 187, 255, 0.3);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 1.1rem;
+    }
+
+    .eyebrow-pill {
+      padding: 0.08rem 0.5rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #ffffff, #bbedff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+      max-width: 34rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-subtitle-em {
+      color: var(--accent-strong);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      opacity: 0.9;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(10, 16, 40, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-meta span i {
+      font-style: normal;
+      font-size: 1rem;
+    }
+
+    /* Penguin pod */
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .penguin-card {
+      width: 100%;
+      max-width: 380px;
+      padding: 1.7rem 1.5rem 1.4rem;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top, #232e61 0, #090d24 55%);
+      border: 1px solid rgba(150, 207, 255, 0.22);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .penguin-card::before {
+      content: "";
+      position: absolute;
+      inset: -60%;
+      background: radial-gradient(
+        ellipse at top,
+        rgba(255, 255, 255, 0.24),
+        transparent 55%
+      );
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .penguin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .penguin-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .penguin-header-left span:first-child {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-strong);
+    }
+
+    .penguin-header-left span:last-child {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+
+    .penguin-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(99, 255, 199, 0.8);
+      background: rgba(4, 30, 27, 0.9);
+      font-size: 0.7rem;
+      color: var(--accent-strong);
+    }
+
+    .penguin-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-strong);
+      box-shadow: 0 0 10px rgba(92, 240, 200, 0.8);
+    }
+
+    .penguin-scene {
+      position: relative;
+      margin: 0.3rem 0 1.25rem;
+      padding: 1.6rem 1.2rem 1.3rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at top, #dff6ff, #76caff);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+    }
+
+    .penguin-ground {
+      position: absolute;
+      inset: auto 10px -8px 10px;
+      height: 70px;
+      background: radial-gradient(circle at top, #ffffff, #c3e2ff);
+      border-radius: 50% 50% 45% 45%;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .penguin {
+      margin: 0 auto;
+      width: 96px;
+      height: 112px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .penguin-body {
+      position: absolute;
+      inset: 20px 14px 12px 14px;
+      background: linear-gradient(145deg, #05091c, #161b38);
+      border-radius: 52px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .penguin-belly {
+      position: absolute;
+      inset: 34px 20px 16px 20px;
+      background: radial-gradient(circle at top, #ffffff, #f6f8ff);
+      border-radius: 50px;
+    }
+
+    .penguin-head {
+      position: absolute;
+      inset: 0 10px 52px 10px;
+      background: linear-gradient(145deg, #060b1f, #151936);
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .penguin-face-mask {
+      position: absolute;
+      inset: 12px 8px 28px 8px;
+      background: #edf6ff;
+      border-radius: 50px;
+    }
+
+    .penguin-eye {
+      position: absolute;
+      top: 15px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #050814;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+    }
+
+    .penguin-eye::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 4px;
+      width: 4px;
+      height: 4px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    .penguin-eye.left {
+      left: 15px;
+    }
+
+    .penguin-eye.right {
+      right: 15px;
+    }
+
+    .penguin-beak {
+      position: absolute;
+      top: 27px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 15px;
+      background: linear-gradient(135deg, #ffd47b, #ffb347);
+      border-radius: 0 0 16px 16px;
+      box-shadow: 0 3px 0 rgba(187, 116, 25, 0.7);
+    }
+
+    .penguin-mouth {
+      position: absolute;
+      inset: 8px 4px auto 4px;
+      height: 7px;
+      background: #f4a259;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .penguin-blush {
+      position: absolute;
+      top: 27px;
+      width: 12px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 158, 177, 0.85);
+      filter: blur(1px);
+    }
+
+    .penguin-blush.left {
+      left: 6px;
+    }
+
+    .penguin-blush.right {
+      right: 6px;
+    }
+
+    .penguin-flipper {
+      position: absolute;
+      top: 50px;
+      width: 22px;
+      height: 34px;
+      background: #060c20;
+      border-radius: 60px;
+      box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+    }
+
+    .penguin-flipper.left {
+      left: 0;
+      transform: rotate(-10deg);
+      transform-origin: center top;
+    }
+
+    .penguin-flipper.right {
+      right: 4px;
+      transform-origin: center top;
+      transform: rotate(8deg);
+    }
+
+    .penguin-feet {
+      position: absolute;
+      inset: auto 26px 2px 26px;
+      height: 14px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .penguin-foot {
+      width: 18px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffb347;
+      box-shadow: 0 3px 0 rgba(145, 89, 24, 0.6);
+    }
+
+    .penguin-caption {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .penguin-caption strong {
+      color: #ffffff;
+    }
+
+    .penguin-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      position: relative;
+      z-index: 1;
+    }
+
+    .penguin-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .penguin-tag {
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(9, 14, 40, 0.92);
+      border: 1px solid rgba(165, 217, 255, 0.35);
+    }
+
+    .penguin-badge {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(16, 239, 210, 0.08);
+      border: 1px solid rgba(92, 240, 200, 0.7);
+      color: var(--accent-strong);
+    }
+
+    /* Sections */
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: radial-gradient(circle at top left, #121632 0, #050816 55%);
+    }
+
+    section:nth-of-type(even) {
+      background: radial-gradient(circle at top right, #050816 0, #02010c 55%);
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      max-width: 38rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr);
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: rgba(8, 12, 34, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .problem-list,
+    .benefit-list,
+    .steps-list,
+    .audience-list {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.7rem;
+    }
+
+    .problem-item,
+    .benefit-item,
+    .step-item,
+    .audience-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .bullet-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      background: rgba(100, 212, 255, 0.08);
+      border: 1px solid rgba(100, 212, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .bullet-icon.alt {
+      background: rgba(92, 240, 200, 0.08);
+      border-color: rgba(92, 240, 200, 0.6);
+    }
+
+    .badge-inline {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(12, 16, 44, 0.85);
+      color: var(--accent);
+      margin-left: 0.35rem;
+    }
+
+    .highlight {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Metrics */
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .metric-card {
+      background: rgba(7, 10, 30, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(100, 212, 255, 0.15);
+      padding: 1.1rem 1rem;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .metric-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      color: var(--accent-soft);
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-card strong {
+      color: #ffffff;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr);
+      gap: 1.7rem;
+      align-items: flex-start;
+    }
+
+    .contact-side p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-side ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .contact-side li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-side li i {
+      font-style: normal;
+      font-size: 1rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(5, 8, 24, 0.96);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(100, 212, 255, 0.7);
+      box-shadow: 0 0 0 1px rgba(92, 240, 200, 0.3);
+      background: rgba(8, 12, 34, 0.98);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-footnote {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      opacity: 0.8;
+      margin-top: 0.3rem;
+    }
+
+    /* Final CTA */
+
+    .closing-cta {
+      text-align: center;
+      padding: 2.6rem 1.2rem 2.6rem;
+      border-radius: 30px;
+      background: radial-gradient(circle at top, #19275b, #050816 65%);
+      border: 1px solid rgba(100, 212, 255, 0.3);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .closing-cta h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .closing-cta p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      max-width: 32rem;
+      margin: 0 auto 1.4rem;
+    }
+
+    .closing-cta .hero-actions {
+      justify-content: center;
+    }
+
+    .closing-note {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      opacity: 0.85;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 1.6rem 0 2rem;
+      background: #02030a;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .footer-meta span {
+      opacity: 0.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      opacity: 0.85;
+    }
+
+    /* Media queries */
+
+    @media (min-width: 720px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: flex;
+      }
+
+      .mobile-lang {
+        display: none;
+      }
+
+      .hero {
+        padding: 4rem 0 3rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      }
+
+      .hero-title {
+        font-size: 2.6rem;
+      }
+
+      .two-column {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+      }
+
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 2.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <a href="#top" class="brand">
+            <div class="brand-logo">
+              <div class="brand-logo-inner"></div>
+            </div>
+            <div class="brand-name">
+              <span>Arctiqa</span>
+              <span>Study with your baby penguin</span>
+            </div>
+          </a>
+
+          <div class="nav-links">
+            <a href="#problem">Problem</a>
+            <a href="#solution">Solution</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div class="nav-cta">
+            <select class="language-select" aria-label="Select language">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="it">Italiano</option>
+            </select>
+            <button class="btn btn-primary">Join the beta</button>
+          </div>
+
+          <div class="mobile-lang">
+            <select class="language-select" aria-label="Select language">
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+              <option value="fr">FR</option>
+              <option value="it">IT</option>
+            </select>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">
+                <span class="eyebrow-pill">New • Study Adventure</span>
+                Your customizable baby penguin study buddy
+              </div>
+              <h1 class="hero-title" id="hero-title">
+                Turn your study plan into an <span>adventure with your penguin</span>
+              </h1>
+              <p class="hero-subtitle">
+                Arctiqa is a gamified study app where a
+                <span class="hero-subtitle-em">cheerful baby penguin grows with you</span>.
+                Organize and optimize your subjects, share live study sessions with friends,
+                test yourself, play mini-games on breaks, and let your penguin keep you motivated
+                through every chapter and exam.
+              </p>
+              <div class="hero-actions">
+                <button class="btn btn-primary">Join the student beta</button>
+                <button class="btn btn-ghost">See how Arctiqa works</button>
+              </div>
+              <div class="hero-meta">
+                <span><i>🐧</i> Hatch & customize your own penguin</span>
+                <span><i>👥</i> Study solo or with friends in shared sessions</span>
+                <span><i>🎮</i> Mini-games and rewards between focus blocks</span>
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+              <div class="penguin-card">
+                <div class="penguin-header">
+                  <div class="penguin-header-left">
+                    <span>Live study buddy</span>
+                    <span>Baby penguin · “Arcy”</span>
+                  </div>
+                  <div class="penguin-status">
+                    <span class="penguin-status-dot"></span>
+                    In a study call with you
+                  </div>
+                </div>
+
+                <div class="penguin-scene">
+                  <div class="penguin-ground"></div>
+                  <div class="penguin">
+                    <div class="penguin-body"></div>
+                    <div class="penguin-belly"></div>
+                    <div class="penguin-head"></div>
+                    <div class="penguin-face-mask"></div>
+                    <div class="penguin-eye left"></div>
+                    <div class="penguin-eye right"></div>
+                    <div class="penguin-beak">
+                      <div class="penguin-mouth"></div>
+                    </div>
+                    <div class="penguin-blush left"></div>
+                    <div class="penguin-blush right"></div>
+                    <div class="penguin-flipper left"></div>
+                    <div class="penguin-flipper right"></div>
+                    <div class="penguin-feet">
+                      <div class="penguin-foot"></div>
+                      <div class="penguin-foot"></div>
+                    </div>
+                  </div>
+                  <p class="penguin-caption">
+                    <strong>Arcy</strong> just hatched and is ready to read with you.
+                    Start a session and your penguin joins every time you study.
+                  </p>
+                </div>
+
+                <div class="penguin-footer">
+                  <div class="penguin-tags">
+                    <span class="penguin-tag">Pomodoro + quests</span>
+                    <span class="penguin-tag">Shared focus “calls”</span>
+                  </div>
+                  <span class="penguin-badge">Level up together 🐟✨</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="problem">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">The problem</div>
+            <h2 class="section-title">Studying is important, but it rarely feels fun or shared</h2>
+            <p class="section-subtitle">
+              Students juggle homework, projects, resources and exams while fighting
+              distractions and stress. Most apps help you check boxes, but they don’t
+              make studying feel like an adventure with people (and a penguin) you enjoy.
+            </p>
+          </div>
+          <div class="two-column">
+            <div class="card">
+              <h3>What students struggle with</h3>
+              <ul class="problem-list">
+                <li class="problem-item">
+                  <div class="bullet-icon">⏰</div>
+                  <p>
+                    Procrastinating, not knowing where to start, and losing track of time
+                    without a clear, friendly structure.
+                  </p>
+                </li>
+                <li class="problem-item">
+                  <div class="bullet-icon">📚</div>
+                  <p>
+                    Having notes, resources, flashcards and tasks scattered in different apps,
+                    making it harder to stay organized.
+                  </p>
+                </li>
+                <li class="problem-item">
+                  <div class="bullet-icon">🙃</div>
+                  <p>
+                    Studying alone for hours and feeling isolated, unmotivated, or bored
+                    between sessions.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>What typical tools don’t offer</h3>
+              <p>
+                Apps inspired by Finch, Duolingo, Fabulous and Kahoot show that
+                <span class="highlight">playful, emotional design</span> works — but students
+                still miss:
+              </p>
+              <ul class="problem-list">
+                <li class="problem-item">
+                  <div class="bullet-icon alt">🐧</div>
+                  <p>A living avatar that grows with their study consistency, not just a static profile.</p>
+                </li>
+                <li class="problem-item">
+                  <div class="bullet-icon alt">👥</div>
+                  <p>Shared study rooms where friends can focus together, talk, and feel like a team.</p>
+                </li>
+                <li class="problem-item">
+                  <div class="bullet-icon alt">🎮</div>
+                  <p>Mini-games and custom rewards to make breaks and achievements actually feel fun.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="solution">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">The solution</div>
+            <h2 class="section-title">A gamified study hub guided by your penguin companion</h2>
+            <p class="section-subtitle">
+              Arctiqa blends planning tools, social features and game-like rewards into
+              one warm space centered around your baby penguin avatar.
+            </p>
+          </div>
+          <div class="two-column">
+            <div class="card">
+              <h3>Organize, plan and optimize your study life</h3>
+              <p>
+                Turn your subjects into a clear, playful plan your penguin can follow:
+              </p>
+              <ul class="benefit-list">
+                <li class="benefit-item">
+                  <div class="bullet-icon">📆</div>
+                  <p>Create structured study blocks from your subjects, topics and exams.</p>
+                </li>
+                <li class="benefit-item">
+                  <div class="bullet-icon">📂</div>
+                  <p>Manage your resources in one place: notes, links, PDFs and practice sets.</p>
+                </li>
+                <li class="benefit-item">
+                  <div class="bullet-icon">🎁</div>
+                  <p>Define your own rewards and let your penguin celebrate when you unlock them.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Study with friends, not just next to a timer</h3>
+              <p>
+                Arctiqa turns studying into something you can share:
+              </p>
+              <ul class="benefit-list">
+                <li class="benefit-item">
+                  <div class="bullet-icon alt">👥</div>
+                  <p>Create joint study sessions where your penguins appear together on screen.</p>
+                </li>
+                <li class="benefit-item">
+                  <div class="bullet-icon alt">💬</div>
+                  <p>Chat with friends, send encouragement, and keep each other accountable.</p>
+                </li>
+                <li class="benefit-item">
+                  <div class="bullet-icon alt">🧩</div>
+                  <p>Play small mini-games during breaks to reset your brain without losing focus.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="audience">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Who it’s for</div>
+            <h2 class="section-title">For students who want focus, fun and connection</h2>
+            <p class="section-subtitle">
+              Arctiqa is made for high school and other students who want to study seriously
+              but still feel cozy, supported and connected along the way.
+            </p>
+          </div>
+          <div class="two-column">
+            <div class="card">
+              <h3>Perfect if you’re a student who…</h3>
+              <ul class="audience-list">
+                <li class="audience-item">
+                  <div class="bullet-icon">🎓</div>
+                  <p>Is juggling multiple subjects and wants a central, friendly study planner.</p>
+                </li>
+                <li class="audience-item">
+                  <div class="bullet-icon">🧠</div>
+                  <p>Needs help staying motivated, focused and emotionally supported during long terms.</p>
+                </li>
+                <li class="audience-item">
+                  <div class="bullet-icon">📚</div>
+                  <p>Enjoys apps like Finch, Duolingo, Fabulous or Kahoot and wants that energy for studying.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Also great for friend groups</h3>
+              <ul class="audience-list">
+                <li class="audience-item">
+                  <div class="bullet-icon alt">🤝</div>
+                  <p>Friends who want shared study rooms with voice or chat and synced focus timers.</p>
+                </li>
+                <li class="audience-item">
+                  <div class="bullet-icon alt">🏆</div>
+                  <p>Study squads who enjoy friendly challenges, quizzes and group quests.</p>
+                </li>
+                <li class="audience-item">
+                  <div class="bullet-icon alt">🌙</div>
+                  <p>Students who love cozy, calm visuals to make late-night or early-morning sessions easier.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Benefits & key features</div>
+            <h2 class="section-title">Everything you need to make studying feel like a game</h2>
+            <p class="section-subtitle">
+              Every feature in Arctiqa is built around one idea:
+              <span class="highlight">your penguin and your friends turn studying into an adventure</span>.
+            </p>
+          </div>
+          <div class="two-column">
+            <div class="card">
+              <h3>Core benefits for your routine</h3>
+              <ul class="benefit-list">
+                <li class="benefit-item">
+                  <div class="bullet-icon">🔥</div>
+                  <p>Stay consistent with streaks, quests and a penguin that reacts to your effort.</p>
+                </li>
+                <li class="benefit-item">
+                  <div class="bullet-icon">🧭</div>
+                  <p>Never feel lost: see what to study today, what’s next and which rewards you’re close to unlocking.</p>
+                </li>
+                <li class="benefit-item">
+                  <div class="bullet-icon">💖</div>
+                  <p>Feel emotionally supported by a companion that’s always there in your “study calls”.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Key feature highlights</h3>
+              <ul class="benefit-list">
+                <li class="benefit-item">
+                  <div class="bullet-icon alt">🐧</div>
+                  <p>Customizable penguin avatar that evolves and unlocks new looks as you study.</p>
+                </li>
+                <li class="benefit-item">
+                  <div class="bullet-icon alt">📝</div>
+                  <p>Study checklists, tests and self-quizzes to review what you learned.</p>
+                </li>
+                <li class="benefit-item">
+                  <div class="bullet-icon alt">🎮</div>
+                  <p>Mini-games for break time that keep you engaged without dragging you away from your goals.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">How it works</div>
+            <h2 class="section-title">From hatching your penguin to mastering your subjects</h2>
+            <p class="section-subtitle">
+              Getting started with Arctiqa is simple: set your goals, invite your friends,
+              and let your penguin walk beside you the whole way.
+            </p>
+          </div>
+          <div class="card">
+            <ul class="steps-list">
+              <li class="step-item">
+                <div class="bullet-icon">1</div>
+                <p>
+                  <span class="highlight">Hatch and customize your baby penguin.</span>
+                  Pick a name, colors and a cozy habitat — this is your companion for the whole school year.
+                </p>
+              </li>
+              <li class="step-item">
+                <div class="bullet-icon">2</div>
+                <p>
+                  <span class="highlight">Plan your study adventure.</span>
+                  Add your subjects, exams and resources so Arctiqa can turn them into quests and focus blocks.
+                </p>
+              </li>
+              <li class="step-item">
+                <div class="bullet-icon">3</div>
+                <p>
+                  <span class="highlight">Start a solo or joint study session.</span>
+                  Open a “study call” with your penguin, invite friends if you want,
+                  and focus while your avatars cheer you on.
+                </p>
+              </li>
+              <li class="step-item">
+                <div class="bullet-icon">4</div>
+                <p>
+                  <span class="highlight">Take mini-game breaks and grow together.</span>
+                  Between blocks, play small games, claim rewards,
+                  and watch your penguin and stats evolve over time.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="metrics">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Impact & outcomes</div>
+            <h2 class="section-title">Helping students stay organized, motivated and connected</h2>
+            <p class="section-subtitle">
+              Arctiqa focuses on sustainable study habits and warm, social motivation
+              instead of pressure or cold dashboards.
+            </p>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Organization</div>
+              <p>
+                Students can see their tasks, resources and sessions in a single place,
+                making it easier to decide what to do next.
+              </p>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Motivation</div>
+              <p>
+                The baby penguin avatar, quests and rewards turn each study block
+                into a small win instead of a chore.
+              </p>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Connection</div>
+              <p>
+                Shared sessions, chats and joint breaks help students feel like they are
+                working alongside friends, not just a timer.
+              </p>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Fun & balance</div>
+              <p>
+                Mini-games during breaks keep things playful while still supporting
+                focused, intentional learning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Contact & early access</div>
+            <h2 class="section-title">Want to bring Arctiqa to your daily study routine?</h2>
+            <p class="section-subtitle">
+              Whether you’re a student or an educator, tell us how you imagine using Arctiqa.
+              We’re inviting early testers to hatch their penguins first.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-side">
+              <p>
+                Share a little about how you currently study and what you’d love
+                a penguin-powered app to help you with.
+              </p>
+              <ul>
+                <li>
+                  <i>🐧</i> Students: join the beta and grow your penguin alongside your grades.
+                </li>
+                <li>
+                  <i>👥</i> Friends & clubs: ask about group features and shared sessions.
+                </li>
+                <li>
+                  <i>🏫</i> Schools & teachers: explore how Arctiqa can support your students’ focus.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <form>
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your full name" />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="name@example.com" />
+                </div>
+                <div>
+                  <label for="role">Who are you?</label>
+                  <input id="role" name="role" type="text" placeholder="High-school student, university, teacher, etc." />
+                </div>
+                <div>
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us about your study goals, challenges, or how you’d like to use Arctiqa."></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  Request early access
+                </button>
+                <p class="form-footnote">
+                  By submitting this form you agree to be contacted about Arctiqa.
+                  No spam — just penguin-friendly updates.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Join the beta">
+        <div class="container">
+          <div class="closing-cta">
+            <h2>Ready to make studying an adventure with your penguin?</h2>
+            <p>
+              Hatch your baby penguin, invite your friends, and turn every study block
+              into a small victory for both of you. The sooner you start, the sooner
+              your penguin will grow alongside your skills.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary">Join the student beta</button>
+              <button class="btn btn-ghost">Get notified at launch</button>
+            </div>
+            <p class="closing-note">
+              Available in multiple languages
+              <span class="badge-inline">EN · ES · FR · IT</span>
+              so you and your penguin can feel at home wherever you study.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-meta">
+            <span>© Arctiqa • A gamified study app with baby penguins.</span>
+          </div>
+          <div class="footer-links">
+            <a href="#top">Back to top</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
       flex: 1;
     }
 
